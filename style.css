@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+img {
+height:25vh;
+}
+.shelves{
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  border: 2px black solid;
+  padding: 2.5vh;
+}
+figure{
+  display: flex;
+}
+figcaption{
+  margin: 20px;
+}
+section{
+  margin: 50px;
+}

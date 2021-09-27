@@ -1,4 +1,4 @@
-let books = [
+const books = [
   {
     title: "Code Complete",
     author: "Steve McConnell",
@@ -51,3 +51,60 @@ let books = [
     image: "./img/learning-javascript-design-patterns.jpg",
   },
 ];
+const myContainer=document.getElementById("container");
+const numOfRows=3;
+
+function createShelves(num,container){
+for (let i=0;i<num;i++){
+  let temp=document.createElement("div")
+  temp.className="shelves";
+  container.appendChild(temp)
+
+}
+}
+function maxNumOfBooksPerShelve(numOfSheves,booksDataArray){
+  return Math.ceil((booksDataArray.length)/numOfSheves)
+
+}
+function putBooksInSheves(booksDataArray,maxNumOfBooksPerShelve){
+  console.log(booksDataArray,maxNumOfBooksPerShelve)
+let shelvesNodeArray=document.getElementsByClassName("shelves")
+const booksDataArrayCopy=[...booksDataArray]
+let nodeIndex=0;
+while(booksDataArrayCopy.length>0){
+for(let i=0;i<maxNumOfBooksPerShelve;i++){
+  if(booksDataArrayCopy.length>0){
+    const temp=document.createElement("div");
+    temp.innerHTML=`<figure>
+    <img
+      src="${booksDataArrayCopy[0].image}"
+      alt="img not found"
+    />
+    <figcaption>
+        <article>
+          <strong> Title </strong>
+          <span>${booksDataArrayCopy[0].title}</span>
+        </article>
+        <article>
+          <strong> Author </strong>
+          <span>${booksDataArrayCopy[0].author}</span>
+        </article>
+      </figcaption>
+  </figure>`;
+  
+    booksDataArrayCopy.shift();
+    shelvesNodeArray[nodeIndex].appendChild(temp)
+  }
+}
+nodeIndex++;
+}
+}
+
+
+
+window.onload=()=>{
+  createShelves(numOfRows,myContainer);
+  putBooksInSheves(books,maxNumOfBooksPerShelve(numOfRows,books))
+
+}
+
