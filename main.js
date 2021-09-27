@@ -51,31 +51,43 @@ const books = [
     image: "./img/learning-javascript-design-patterns.jpg",
   },
 ];
-const myContainer=document.getElementById("container");
-const numOfRows=3;
 
-function createShelves(num,container){
-for (let i=0;i<num;i++){
-  let temp=document.createElement("div")
-  temp.className="shelves";
-  container.appendChild(temp)
+const myContainer = document.getElementById("container");
+const myForm = document.getElementById("form");
+const title = document.getElementById("title");
+const author = document.getElementById("author");
+const link = document.getElementById("link");
 
-}
-}
-function maxNumOfBooksPerShelve(numOfSheves,booksDataArray){
-  return Math.ceil((booksDataArray.length)/numOfSheves)
+myForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  addNewBook();
+  clearForm();
+  clearContainer();
+  createShelves(numOfRows, myContainer);
+  putBooksInSheves(books, maxNumOfBooksPerShelve(numOfRows, books));
+});
+const numOfRows = 3;
 
+function createShelves(num, container) {
+  for (let i = 0; i < num; i++) {
+    let temp = document.createElement("div");
+    temp.className = "shelves";
+    container.appendChild(temp);
+  }
 }
-function putBooksInSheves(booksDataArray,maxNumOfBooksPerShelve){
-  console.log(booksDataArray,maxNumOfBooksPerShelve)
-let shelvesNodeArray=document.getElementsByClassName("shelves")
-const booksDataArrayCopy=[...booksDataArray]
-let nodeIndex=0;
-while(booksDataArrayCopy.length>0){
-for(let i=0;i<maxNumOfBooksPerShelve;i++){
-  if(booksDataArrayCopy.length>0){
-    const temp=document.createElement("div");
-    temp.innerHTML=`<figure>
+function maxNumOfBooksPerShelve(numOfSheves, booksDataArray) {
+  return Math.ceil(booksDataArray.length / numOfSheves);
+}
+function putBooksInSheves(booksDataArray, maxNumOfBooksPerShelve) {
+  console.log(booksDataArray, maxNumOfBooksPerShelve);
+  let shelvesNodeArray = document.getElementsByClassName("shelves");
+  const booksDataArrayCopy = [...booksDataArray];
+  let nodeIndex = 0;
+  while (booksDataArrayCopy.length > 0) {
+    for (let i = 0; i < maxNumOfBooksPerShelve; i++) {
+      if (booksDataArrayCopy.length > 0) {
+        const temp = document.createElement("div");
+        temp.innerHTML = `<figure>
     <img
       src="${booksDataArrayCopy[0].image}"
       alt="img not found"
@@ -91,20 +103,33 @@ for(let i=0;i<maxNumOfBooksPerShelve;i++){
         </article>
       </figcaption>
   </figure>`;
-  
-    booksDataArrayCopy.shift();
-    shelvesNodeArray[nodeIndex].appendChild(temp)
+
+        booksDataArrayCopy.shift();
+        shelvesNodeArray[nodeIndex].appendChild(temp);
+      }
+    }
+    nodeIndex++;
   }
 }
-nodeIndex++;
-}
-}
 
-
-
-window.onload=()=>{
-  createShelves(numOfRows,myContainer);
-  putBooksInSheves(books,maxNumOfBooksPerShelve(numOfRows,books))
-
+function addNewBook() {
+  books.push({
+    title: title.value,
+    author: author.value,
+    image: link.value,
+  });
 }
 
+function clearForm() {
+  title.value = "";
+  author.value = "";
+  link.value = "";
+}
+function clearContainer() {
+  myContainer.innerHTML = "";
+}
+
+window.onload = () => {
+  createShelves(numOfRows, myContainer);
+  putBooksInSheves(books, maxNumOfBooksPerShelve(numOfRows, books));
+};

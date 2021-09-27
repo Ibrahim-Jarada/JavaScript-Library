@@ -4,21 +4,33 @@
   box-sizing: border-box;
 }
 img {
-height:25vh;
+  height: 25vh;
 }
-.shelves{
+.shelves {
   height: 30vh;
   display: flex;
   justify-content: center;
   border: 2px black solid;
   padding: 2.5vh;
 }
-figure{
+figure {
   display: flex;
 }
-figcaption{
+figcaption {
   margin: 20px;
 }
-section{
+section {
   margin: 50px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+input {
+  margin: 5px;
+}
+button {
+  margin: 10px;
 }
