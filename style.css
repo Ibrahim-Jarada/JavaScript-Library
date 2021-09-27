@@ -4,10 +4,10 @@
   box-sizing: border-box;
 }
 img {
-  height: 25vh;
+  height: 20vh;
 }
 .shelves {
-  height: 30vh;
+  height: 25vh;
   display: flex;
   justify-content: center;
   border: 2px black solid;
@@ -33,4 +33,8 @@ input {
 }
 button {
   margin: 10px;
+}
+h1{
+text-align: center;
+padding-top: 30px;
 }
