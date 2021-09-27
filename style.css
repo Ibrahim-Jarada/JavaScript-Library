@@ -19,9 +19,6 @@ figure {
 figcaption {
   margin: 20px;
 }
-section {
-  margin: 50px;
-}
 form {
   display: flex;
   flex-direction: column;
@@ -33,8 +30,19 @@ input {
 }
 button {
   margin: 10px;
+  padding: 5px;
 }
 h1{
 text-align: center;
 padding-top: 30px;
+}
+.hidden{
+  display: none;
+}
+.showForm{
+  margin: 0 auto;
+  max-width: fit-content;
+}
+section{
+  margin: 20px;
 }

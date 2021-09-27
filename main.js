@@ -57,7 +57,12 @@ const myForm = document.getElementById("form");
 const title = document.getElementById("title");
 const author = document.getElementById("author");
 const link = document.getElementById("link");
-
+const formContainer = document.getElementById("formContainer");
+const showFormBtn = document.getElementById("showFormBtn");
+showFormBtn.addEventListener("click", (e) => {
+  formContainer.classList.toggle("hidden");
+  showFormBtn.classList.toggle("hidden");
+});
 myForm.addEventListener("submit", (e) => {
   e.preventDefault();
   addNewBook();
@@ -65,6 +70,8 @@ myForm.addEventListener("submit", (e) => {
   clearContainer();
   createShelves(numOfRows, myContainer);
   putBooksInSheves(books, maxNumOfBooksPerShelve(numOfRows, books));
+  formContainer.classList.toggle("hidden");
+  showFormBtn.classList.toggle("hidden");
 });
 const numOfRows = 3;
 
