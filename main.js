@@ -1,0 +1,53 @@
+let books = [
+  {
+    title: "Code Complete",
+    author: "Steve McConnell",
+    image: "./img/code-complete.jpg",
+  },
+  {
+    title: "Clean code",
+    author: "Robert C. Martin",
+    image: "./img/clean-code.jpg",
+  },
+  {
+    title: "Working Effectively with Legacy Code",
+    author: "Michael Feathers",
+    image: "./img/legacy-code.jpg",
+  },
+  {
+    title: "Writing Secure Code",
+    author: "Michael Howard & David LeBlanc",
+    image: "./img/secure-code.jpg",
+  },
+  {
+    title: "Head First Design Patterns",
+    author: "Eric Freeman & Bert Bates & Kathy Sierra & Elisabeth Robson",
+    image: "./img/head-first-design-patterns.jpg",
+  },
+  {
+    title: "Introduction To Algorithms",
+    author:
+      "Thomas H. Cormen & Charles E. Leiserson & Ronald L. Rivest & Clifford Stein",
+    image: "./img/introduction-to-algorithms.jpg",
+  },
+  {
+    title: "The Algorithm Design Manual",
+    author: "Steven S Skiena",
+    image: "./img/the-algorithm-desgin-manual.jpg",
+  },
+  {
+    title: "Eloquent JavaScript",
+    author: "Marijn Haverbeke",
+    image: "./img/eloquent-javascript.jpg",
+  },
+  {
+    title: "You Don`t Know JS",
+    author: "Steve Kyle Simpson",
+    image: "./img/you-don't-know-javascript.jpg",
+  },
+  {
+    title: "Learning JavaScript Design Patterns",
+    author: "Addy Osmani",
+    image: "./img/learning-javascript-design-patterns.jpg",
+  },
+];
