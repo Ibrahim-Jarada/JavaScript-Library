@@ -40,7 +40,7 @@ padding-top: 30px;
 .hidden{
   display: none;
 }
-.showForm{
+.center{
   margin: 0 auto;
   max-width: fit-content;
 }

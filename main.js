@@ -59,10 +59,10 @@ const author = document.getElementById("author");
 const link = document.getElementById("link");
 const formContainer = document.getElementById("formContainer");
 const showFormBtn = document.getElementById("showFormBtn");
-showFormBtn.addEventListener("click", (e) => {
-  formContainer.classList.toggle("hidden");
-  showFormBtn.classList.toggle("hidden");
-});
+const hideFormBtn =document.getElementById("hideFormBtn");
+
+hideFormBtn.addEventListener("click",showHideFormToggle)
+showFormBtn.addEventListener("click", showHideFormToggle);
 myForm.addEventListener("submit", (e) => {
   e.preventDefault();
   addNewBook();
@@ -134,6 +134,11 @@ function clearForm() {
 }
 function clearContainer() {
   myContainer.innerHTML = "";
+}
+
+function showHideFormToggle(){
+     formContainer.classList.toggle("hidden");
+    showFormBtn.classList.toggle("hidden");
 }
 
 window.onload = () => {
