@@ -63,6 +63,8 @@ const hideFormBtn =document.getElementById("hideFormBtn");
 
 hideFormBtn.addEventListener("click",showHideFormToggle)
 showFormBtn.addEventListener("click", showHideFormToggle);
+
+
 myForm.addEventListener("submit", (e) => {
   e.preventDefault();
   addNewBook();
@@ -73,6 +75,8 @@ myForm.addEventListener("submit", (e) => {
   formContainer.classList.toggle("hidden");
   showFormBtn.classList.toggle("hidden");
 });
+
+
 const numOfRows = 3;
 
 function createShelves(num, container) {
@@ -82,9 +86,11 @@ function createShelves(num, container) {
     container.appendChild(temp);
   }
 }
+
 function maxNumOfBooksPerShelve(numOfSheves, booksDataArray) {
   return Math.ceil(booksDataArray.length / numOfSheves);
 }
+
 function putBooksInSheves(booksDataArray, maxNumOfBooksPerShelve) {
   console.log(booksDataArray, maxNumOfBooksPerShelve);
   let shelvesNodeArray = document.getElementsByClassName("shelves");
