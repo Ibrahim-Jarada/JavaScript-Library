@@ -12,12 +12,13 @@ img {
   justify-content: center;
   border: 2px black solid;
   padding: 2.5vh;
+  margin-top: -2px;
 }
 figure {
   display: flex;
 }
 figcaption {
-  margin: 20px;
+  margin: 2.5vh;
 }
 form {
   display: flex;
