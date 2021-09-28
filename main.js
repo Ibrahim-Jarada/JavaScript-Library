@@ -92,33 +92,46 @@ function maxNumOfBooksPerShelve(numOfSheves, booksDataArray) {
 }
 
 function putBooksInSheves(booksDataArray, maxNumOfBooksPerShelve) {
-  console.log(booksDataArray, maxNumOfBooksPerShelve);
   let shelvesNodeArray = document.getElementsByClassName("shelves");
   const booksDataArrayCopy = [...booksDataArray];
   let nodeIndex = 0;
   while (booksDataArrayCopy.length > 0) {
     for (let i = 0; i < maxNumOfBooksPerShelve; i++) {
       if (booksDataArrayCopy.length > 0) {
-        const temp = document.createElement("div");
-        temp.innerHTML = `<figure>
-    <img
-      src="${booksDataArrayCopy[0].image}"
-      alt="img not found"
-    />
-    <figcaption>
-        <article>
-          <strong> Title </strong>
-          <span>${booksDataArrayCopy[0].title}</span>
-        </article>
-        <article>
-          <strong> Author </strong>
-          <span>${booksDataArrayCopy[0].author}</span>
-        </article>
-      </figcaption>
-  </figure>`;
+
+        const tempFigure = document.createElement("figure");
+        shelvesNodeArray[nodeIndex].appendChild(tempFigure);
+
+        const tempBookImg= document.createElement("img");
+        tempBookImg.src=booksDataArrayCopy[0].image;
+        tempBookImg.alt="img not found";
+
+        tempFigure.appendChild(tempBookImg)
+
+        const tempFigCaption=document.createElement("figcaption");
+        tempFigure.appendChild(tempFigCaption)
+
+        const tempTitleArticle=document.createElement("article");
+        tempFigCaption.appendChild(tempTitleArticle)
+
+        const tempTitleStrong=document.createElement("strong");
+        tempTitleStrong.textContent="Title";
+        tempTitleArticle.appendChild(tempTitleStrong)
+        const tempTitleSpan=document.createElement("span");
+        tempTitleSpan.textContent=booksDataArrayCopy[0].title;
+        tempTitleArticle.appendChild(tempTitleSpan)
+
+        const tempAuthorArticle=document.createElement("article");
+        tempFigCaption.appendChild(tempAuthorArticle)
+
+        const tempAuthorStrong=document.createElement("strong");
+        tempAuthorStrong.textContent="Author";
+        tempAuthorArticle.appendChild(tempAuthorStrong)
+        const tempAuthorSpan=document.createElement("span");
+        tempAuthorSpan.textContent=booksDataArrayCopy[0].author;
+        tempAuthorArticle.appendChild(tempTitleSpan)
 
         booksDataArrayCopy.shift();
-        shelvesNodeArray[nodeIndex].appendChild(temp);
       }
     }
     nodeIndex++;

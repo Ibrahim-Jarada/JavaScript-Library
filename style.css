@@ -48,3 +48,6 @@ padding-top: 30px;
 section{
   margin: 20px;
 }
+body{
+  background-image: url(./img/background.png);
+}
