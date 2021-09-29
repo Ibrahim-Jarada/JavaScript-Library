@@ -60,6 +60,7 @@ const link = document.getElementById("link");
 const formContainer = document.getElementById("formContainer");
 const showFormBtn = document.getElementById("showFormBtn");
 const hideFormBtn =document.getElementById("hideFormBtn");
+const autoHide=document.getElementById("autoHide")
 
 hideFormBtn.addEventListener("click",showHideFormToggle)
 showFormBtn.addEventListener("click", showHideFormToggle);
@@ -72,8 +73,7 @@ myForm.addEventListener("submit", (e) => {
   clearContainer();
   createShelves(numOfRows, myContainer);
   putBooksInSheves(books, maxNumOfBooksPerShelve(numOfRows, books));
-  formContainer.classList.toggle("hidden");
-  showFormBtn.classList.toggle("hidden");
+if(autoHide.checked) showHideFormToggle();
 });
 
 
