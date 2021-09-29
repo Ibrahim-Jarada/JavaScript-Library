@@ -129,7 +129,7 @@ function putBooksInSheves(booksDataArray, maxNumOfBooksPerShelve) {
         tempAuthorArticle.appendChild(tempAuthorStrong)
         const tempAuthorSpan=document.createElement("span");
         tempAuthorSpan.textContent=booksDataArrayCopy[0].author;
-        tempAuthorArticle.appendChild(tempTitleSpan)
+        tempAuthorArticle.appendChild(tempAuthorSpan)
 
         booksDataArrayCopy.shift();
       }
