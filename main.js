@@ -115,7 +115,7 @@ function putBooksInSheves(booksDataArray, maxNumOfBooksPerShelve) {
         tempFigCaption.appendChild(tempTitleArticle)
 
         const tempTitleStrong=document.createElement("strong");
-        tempTitleStrong.textContent="Title";
+        tempTitleStrong.textContent="Title : ";
         tempTitleArticle.appendChild(tempTitleStrong)
         const tempTitleSpan=document.createElement("span");
         tempTitleSpan.textContent=booksDataArrayCopy[0].title;
@@ -125,7 +125,7 @@ function putBooksInSheves(booksDataArray, maxNumOfBooksPerShelve) {
         tempFigCaption.appendChild(tempAuthorArticle)
 
         const tempAuthorStrong=document.createElement("strong");
-        tempAuthorStrong.textContent="Author";
+        tempAuthorStrong.textContent="Author : ";
         tempAuthorArticle.appendChild(tempAuthorStrong)
         const tempAuthorSpan=document.createElement("span");
         tempAuthorSpan.textContent=booksDataArrayCopy[0].author;
