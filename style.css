@@ -56,3 +56,15 @@ section {
 body {
   background-image: url(./img/background.png);
 }
+article{
+  height: 3em;
+  text-overflow: ellipsis;
+  width: 25vh;
+}
+p{
+  width: 25vh;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
