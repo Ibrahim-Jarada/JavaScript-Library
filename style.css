@@ -5,6 +5,7 @@
 }
 img {
   height: 20vh;
+  border-radius: 0 23px 0 20px;
 }
 .shelves {
   height: 25vh;
