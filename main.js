@@ -5,7 +5,7 @@ const books = [
     image: "./img/code-complete.jpg",
   },
   {
-    title: "Clean code",
+    title: "Clean Code",
     author: "Robert C. Martin",
     image: "./img/clean-code.jpg",
   },
