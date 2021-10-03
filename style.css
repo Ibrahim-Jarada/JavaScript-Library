@@ -73,3 +73,20 @@ p{
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+@media screen and (max-width: 766px) {
+  .shelves{
+    flex-direction: column !important;
+    justify-items: center !important;
+    align-items: center;
+    height: fit-content !important;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+  
+  }
+  figure{
+    width: 220px !important;
+  }
+}
