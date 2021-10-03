@@ -3,4 +3,4 @@ JavaScript &amp;HTML &amp; CSS project which is prerequisite for Code-Academy Ca
 
 ## Live Link : [Click Here](https://ibrahim-jarada.github.io/JavaScript-Library/)
 
-## My Commits : [Click Here] (https://github.com/Ibrahim-Jarada/JavaScript-Library/commits/main)
+## My Commits : [Click Here](https://github.com/Ibrahim-Jarada/JavaScript-Library/commits/main)
