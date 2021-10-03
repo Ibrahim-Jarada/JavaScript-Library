@@ -8,26 +8,34 @@
     <title>JavaScript Library</title>
   </head>
   <body>
-      <h1>JavaScript Library</h1>
+    <h1>JavaScript Library</h1>
+    <div class="center">
+      <button id="showFormBtn">Add New Book</button>
+    </div>
+    <section id="formContainer" class="hidden">
+      <form action="" id="form">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" required />
+        <label for="author">Author</label>
+        <input type="text" name="author" id="author" required />
+        <label for="link">Link</label>
+        <input type="text" name="link" id="link" required />
+        <button type="submit">Add New Book</button>
+      </form>
       <div class="center">
-          <button id="showFormBtn">Add New Book</button>
+        <label for="autoHide" title="Auto Hide After Adding New Book"
+          >Auto Hide</label
+        >
+        <input
+          type="checkbox"
+          name="autoHide"
+          id="autoHide"
+          title="Auto Hide After Adding New Book"
+          checked
+        />
+        <button id="hideFormBtn">Hide Form</button>
       </div>
-            <section id="formContainer" class="hidden">
-          <form action="" id="form" >
-            <label for="title">Title</label>
-            <input type="text" name="title" id="title" required/>
-            <label for="author">Author</label>
-            <input type="text" name="author" id="author" required/>
-            <label for="link">Link</label>
-            <input type="text" name="link" id="link" required/>
-            <button type="submit">Add New Book</button>
-          </form>
-          <div class="center">
-            <label for="autoHide">Auto Hide</label>
-            <input type="checkbox" name="autoHide" id="autoHide" checked>
-            <button id="hideFormBtn">Hide Form</button>
-          </div>
-      </section>
+    </section>
     <section id="container"></section>
     <section id="background"></section>
   </body>

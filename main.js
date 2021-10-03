@@ -5,7 +5,7 @@ const books = [
     image: "./img/code-complete.jpg",
   },
   {
-    title: "Clean code",
+    title: "Clean Code",
     author: "Robert C. Martin",
     image: "./img/clean-code.jpg",
   },
@@ -100,6 +100,7 @@ function putBooksInSheves(booksDataArray, maxNumOfBooksPerShelve) {
       if (booksDataArrayCopy.length > 0) {
 
         const tempFigure = document.createElement("figure");
+        tempFigure.style.width=`${85/maxNumOfBooksPerShelve}vw`
         shelvesNodeArray[nodeIndex].appendChild(tempFigure);
 
         const tempBookImg= document.createElement("img");
@@ -111,18 +112,30 @@ function putBooksInSheves(booksDataArray, maxNumOfBooksPerShelve) {
         const tempFigCaption=document.createElement("figcaption");
         tempFigure.appendChild(tempFigCaption)
 
+        tempBookImg.onload=function(){
+          tempFigCaption.style.width=`${tempFigure.clientWidth-this.width}px`
+          console.log(tempFigCaption.style.width)
+        }
         const tempTitleArticle=document.createElement("article");
+
         tempFigCaption.appendChild(tempTitleArticle)
 
-        const tempTitleStrong=document.createElement("strong");
+        const tempTitleStrong=document.createElement("p");
         tempTitleStrong.textContent=booksDataArrayCopy[0].title;
+        tempTitleStrong.title=booksDataArrayCopy[0].title;
+        tempTitleStrong.style.fontWeight="bold";
+        tempTitleStrong.style.height="6em"
+        tempTitleStrong.style.whiteSpace="normal"
         tempTitleArticle.appendChild(tempTitleStrong)
 
         const tempAuthorArticle=document.createElement("article");
         tempFigCaption.appendChild(tempAuthorArticle)
 
-        const tempAuthorStrong=document.createElement("strong");
+        const tempAuthorStrong=document.createElement("p");
         tempAuthorStrong.textContent="Author : ";
+        tempAuthorStrong.title="Author : ";
+        tempAuthorStrong.style.fontWeight="bold";
+
         tempAuthorArticle.appendChild(tempAuthorStrong)
         const tempAuthorSpan=document.createElement("p");
         tempAuthorSpan.textContent=booksDataArrayCopy[0].author;
@@ -162,3 +175,9 @@ window.onload = () => {
   createShelves(numOfRows, myContainer);
   putBooksInSheves(books, maxNumOfBooksPerShelve(numOfRows, books));
 };
+window.onresize=()=>{
+  console.log("123")
+  clearContainer();
+  createShelves(numOfRows, myContainer);
+  putBooksInSheves(books, maxNumOfBooksPerShelve(numOfRows, books));
+}
