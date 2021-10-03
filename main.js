@@ -114,7 +114,6 @@ function putBooksInSheves(booksDataArray, maxNumOfBooksPerShelve) {
 
         tempBookImg.onload=function(){
           tempFigCaption.style.width=`${tempFigure.clientWidth-this.width}px`
-          console.log(tempFigCaption.style.width)
         }
         const tempTitleArticle=document.createElement("article");
 
@@ -176,7 +175,6 @@ window.onload = () => {
   putBooksInSheves(books, maxNumOfBooksPerShelve(numOfRows, books));
 };
 window.onresize=()=>{
-  console.log("123")
   clearContainer();
   createShelves(numOfRows, myContainer);
   putBooksInSheves(books, maxNumOfBooksPerShelve(numOfRows, books));
