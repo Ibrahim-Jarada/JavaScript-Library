@@ -91,4 +91,13 @@ i {
   figure {
     width: 220px !important;
   }
+  article {
+    text-overflow:unset;
+  }
+  p {
+    overflow:auto;
+    text-overflow: unset;
+    white-space: nowrap;
+  }
+  
 }
