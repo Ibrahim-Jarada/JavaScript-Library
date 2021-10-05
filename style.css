@@ -56,6 +56,8 @@ section {
 #background {
   margin: 0;
   background-image: url(./img/background.png);
+  background-repeat: no-repeat;
+  background-size:cover;
   position: fixed;
   opacity: 0.4;
   top: 0;
